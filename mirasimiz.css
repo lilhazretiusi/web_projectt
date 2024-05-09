@@ -1,0 +1,106 @@
+/* Spor, Dans, Kendim ve Fener yazılarının beyaz renkte olması */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.navbar-brand,
+.navbar-nav .nav-link {
+    color: white;
+    font-size: 1.3rem;
+}
+
+.nav-item {
+    border-right: 1px solid white;
+    padding-right: 10px; /* İsteğe bağlı: metin ve çizgi arasındaki mesafeyi ayarlar */
+}
+
+/* Son nav-item'in sağında çizgi olmaması için */
+.nav-item:last-child {
+    border-right: none;
+}
+
+.navbar-brand,
+.navbar-nav .nav-link:hover {
+    font-size: 1.9rem;
+    color: greenyellow;
+}
+
+body {
+    background-color: #1D212B; /* Navbar ile aynı renk */
+    color: white; /* Metin rengi beyaz */
+}
+
+header{
+    background-color: #1D212B;
+}
+
+table-container {
+    display: flex;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #007bff;
+    color: white;
+}
+
+td img{
+    width: 20px;
+}
+
+.content {
+    display: flex;
+    align-items: center; /* İçeriği dikey olarak hizalama */
+}
+
+
+
+.text {
+    margin-left: 20px; /* Metnin fotoğraftan sağa kayması */
+    flex-grow: 1; /* Metnin fotoğraftan boşluksuz olarak geri kalan yere yayılması */
+}
+
+
+.container h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-top: 25px;
+}
+
+#tarihçe{
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.7); /* Arka plan rengi */
+    color: white; /* Metin rengi */
+    border-radius: 5px; /* Kenar yuvarlatma */
+    position: absolute; /* Mutlak konumlandırma */
+    right: 0; /* Sağa hizalama */
+    bottom: 0; /* Alta hizalama */
+    left: 0; /* Sola hizalama */
+    padding: 15px; /* İç içe boşluk */
+    opacity: 0; /* Başlangıçta görünmez */
+    transition: opacity 0.5s; /* Geçiş efekti */
+}
+
+.carousel-item:hover .carousel-caption {
+    opacity: 1; /* Üzerine gelindiğinde görünür hale getir */
+}
+
+.carousel-item img {
+    max-width: 1200px; /* Maksimum genişlik */
+    max-height: 600px; /* Maksimum yükseklik */
+}
+
+
