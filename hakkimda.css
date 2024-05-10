@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.navbar-brand,
+.navbar-nav .nav-link {
+    color: white;
+    font-size: 1.3rem;
+}
+
+.nav-item a{
+    color: white;
+    font-size: 1.9rem;
+}
+
+.nav-item a:hover{
+    color: skyblue;
+}
+
+.content img{
+    border: #1D212B solid 3px;
+    margin-left: 43px;
+}
+
+section {
+    transition: filter 0.5s; /* Geçiş efektinin süresi */
+}
+
+section:not(:hover) {
+    filter: blur(1px); 
+}
+
+
+section:hover {
+    filter: none; /* Mouse bir sectionun üzerine gelindiğinde bulanıklık kaldırılır */
+    background-color: #ccc; /* Mouse bir sectionun üzerine gelindiğinde arka plan rengi maviye dönüşür */
+    transform: scale(1.02);
+}
+
+
+
+
+section {
+    border-top: 1px solid #ccc; /* Her section'ın üstünde ince bir çizgi oluşturur */
+    margin-top: 40px; /* İçerikle çizgi arasındaki boşluğu arttırır */
+}
+
+section:first-child {
+    border-top: none; /* İlk section'ın üstündeki çizgiyi kaldırır */
+    padding-top: 0; /* İçerikle çizgi arasındaki boşluğu sıfırlar */
+    margin-top: 0; /* İçerikle çizgi arasındaki boşluğu sıfırlar */
+}
+
+
+
+
+.content {
+    display: flex; /* İçerikleri yan yana hizalar */
+    align-items: center; /* Dikey hizalamayı ortalar */
+    margin-top: 20px; /* İsteğe bağlı: içeriği yukarı itme */
+}
+
+.content img {
+    flex: 0 0 auto; /* Resmin boyutunu sabitler */
+    margin-right: 30px; /* Yazı ile resim arasındaki boşluğu ayarlar */
+}
+
+.text {
+    flex: 1; /* Yazının genişliğini doldurur */
+}
+
+
+main h1{
+    margin-left: 36px;
+    color: #1D212B;
+    margin-top: 40px;
+}
+
+.container h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-top: 25px;
+}
+
+.nav-item {
+    border-right: 1px solid white;
+    padding-right: 10px; /* İsteğe bağlı: metin ve çizgi arasındaki mesafeyi ayarlar */
+}
+
+/* Son nav-item'in sağında çizgi olmaması için */
+.nav-item:last-child {
+    border-right: none;
+}
+
+.navbar-brand,
+.navbar-nav .nav-link:hover {
+    font-size: 1.9rem;
+    color: skyblue;
+}
+
+body {
+    background-color: #1D212B; /* Navbar ile aynı renk */
+    color: white; /* Metin rengi beyaz */
+}
+
+header{
+    background-color: #1D212B;
+}
+
+footer{
+    background-color: #1D212B;
+    height: 100px;
+    text-align: center
+}
+
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.footer-icons a {
+    margin: 0 10px;
+    background-color: #1D212B; /* Footer arka plan rengi */
+    padding: 10px; /* İkonlara kenar boşluğu eklemek için */
+    border-radius: 50%; /* İkonlara yuvarlak köşe vermek için */
+}
+
+.footer-icons img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
