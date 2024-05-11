@@ -1,0 +1,207 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+body{
+
+    background-color: brown;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+}
+
+a:hover{
+    color: orange;
+}
+
+header{
+    position: relative;
+    padding: 0 2rem;
+}
+
+.navbar{
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo a{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar .links{
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar .togglebtn{
+    color: black;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.drpmenu{
+    display: none;
+    position: absolute;
+    right: 2rem;
+    height: 0;
+    top: 60px;
+    width: 300px;
+    background: rgba(0, 0, 0, .1);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+
+}
+
+.drpmenu.open{
+    height: 240px;
+
+}
+
+.drpmenu li{
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.drpmenu .actbtn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Kartların genel stilleri */
+.card {
+    width: 250px;
+    border-radius: 15px;
+}
+
+/* Kartların yatayda sıralanması */
+#halk .content {
+    display: flex;
+    justify-content: space-between; /* Kartları yatayda eşit aralıklarla dağıtır */
+    padding: 0 30px; /* Sağ ve sol kenarlardan 30px içeride olacak */
+}
+
+/* İçerik kartlarının stilleri */
+.left-card, .right-card {
+    display: flex;
+    align-items: center;
+    margin-top: 20px; /* Kartların üst kenardan 20px içeride olacak */
+}
+
+.left-card {
+    margin-right: auto; /* Sağdan boşluk bırakır */
+    background-color: bisque;
+    width: 500px;
+}
+
+
+
+
+.right-card {
+    margin-left: auto; /* Soldan boşluk bırakır */
+    background-color: bisque;
+    width: 500px;
+
+}
+
+
+
+#yer .content {
+    display: flex; /* İçeriği yatayda hizala */
+    justify-content: center; /* İçeriği yatayda tam ortala */
+    align-items: center; /* İçeriği dikeyde tam ortala */
+    flex-wrap: wrap; /* İçeriği sığdıramayacak kadar büyük olduğunda alt satıra geçmesini sağla */
+}
+
+#yer .content img {
+    margin: 10px; /* Fotoğraflar arasında boşluk bırak */
+    width: 300px; /* Fotoğraf genişliği */
+    height: 300px; /* Fotoğraf yüksekliği */
+    object-fit: cover; /* Fotoğraf boyutunu korurken orantılı olarak kırp */
+    border-radius: 10px; /* Fotoğraf kenarlarını yuvarla */
+}
+
+/* Dere Firtina kartı */
+#dere-firtina-card {
+    background-color: white; /* Kart arka planını beyaz yap */
+    padding: 10px; /* Kart içeriğine boşluk ekle */
+    border-radius: 10px; /* Kart kenarlarını yuvarla */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hafif bir gölge ekle */
+    position: absolute; /* Konumu mutlak yap */
+    display: none; /* Başlangıçta gizle */
+    z-index: 1; /* Diğer öğelerin üzerinde olacak şekilde ayarla */
+}
+
+/* Dere Firtina kartının metni */
+#dere-firtina-card p {
+    margin-bottom: 0; /* Paragrafın alt boşluğunu kaldır */
+}
+
+/* Dere Firtina fotoğrafına hover edildiğinde kartı göster */
+#dere-firtina:hover #dere-firtina-card {
+    display: block; /* Kartı göster */
+}
+
+
+/* Başlık ve içerik metinlerinin stilleri */
+.card-title {
+    text-align: center;
+}
+
+.card-text {
+    text-align: justify;
+}
+
+
+
+
+
+
+
+
+
+@media(max-width: 992px){
+    .navbar .links,
+    .navbar .actbtn{
+        display: none;
+    }
+
+    .navbar .togglebtn{
+        display: block;
+        color: white;
+    }
+
+    .drpmenu{
+        display: block;
+    }
+
+}
+
+@media (max-width: 576px){
+    .drpmenu{
+        left: 2rem;
+        width: unset;
+    }
+}
