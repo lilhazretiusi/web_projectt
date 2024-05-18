@@ -1,207 +1,331 @@
-*{
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
-body{
-
-    background-color: brown;
+header {
+    background-color: darkblue;
+    color: #FFFF00;
+    text-align: center;
+    padding: 20px;
 }
 
-li{
-    list-style: none;
+h2 {
+    color: darkblue;
+    border-bottom: 2px solid darkblue;
+    padding-bottom: 5px;
+    text-align: center; 
+    margin-top: 10px;
 }
 
-a{
-    text-decoration: none;
-    color: white;
-    font-size: 1rem;
-}
-
-a:hover{
-    color: orange;
-}
-
-header{
-    position: relative;
-    padding: 0 2rem;
-}
-
-.navbar{
-    width: 100%;
-    height: 60px;
-    max-width: 1200px;
-    margin: 0 auto;
+section {
+    margin: 20px auto; 
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
     justify-content: space-between;
+    max-width: 1200px; 
+    position: relative;
 }
 
-.navbar .logo a{
-    font-size: 1.5rem;
-    font-weight: bold;
+article {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    flex-basis: calc(33.33% - 20px); /* Adjusted for wider articles */
+    box-sizing: border-box;
+    transition: 0.3s ease;
 }
 
-.navbar .links{
-    display: flex;
-    gap: 2rem;
+article p {
+    margin: 15px;
 }
 
-.navbar .togglebtn{
-    color: black;
-    font-size: 1.5rem;
-    cursor: pointer;
-    display: none;
+article:hover {
+    transform: scale(1.05); 
 }
 
-.drpmenu{
-    display: none;
-    position: absolute;
-    right: 2rem;
-    height: 0;
-    top: 60px;
-    width: 300px;
-    background: rgba(0, 0, 0, .1);
-    backdrop-filter: blur(15px);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-
-
-}
-
-.drpmenu.open{
-    height: 240px;
-
-}
-
-.drpmenu li{
-    padding: 0.7rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.drpmenu .actbtn{
-    width: 100%;
+.image-container {
+    flex-basis: 20%; /* container içindeki başlangıç boyutları */
     display: flex;
     justify-content: center;
+    align-items: center; 
+    margin: 20px 0;
 }
 
-/* Kartların genel stilleri */
-.card {
-    width: 250px;
-    border-radius: 15px;
+.round-image {
+    border-radius: 50%;
+    width: 400px; 
+    height: 400px; 
+    object-fit: cover; /*görüntü containeri kaplasın*/
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 4px solid darkblue;
 }
 
-/* Kartların yatayda sıralanması */
-#halk .content {
-    display: flex;
-    justify-content: space-between; /* Kartları yatayda eşit aralıklarla dağıtır */
-    padding: 0 30px; /* Sağ ve sol kenarlardan 30px içeride olacak */
-}
-
-/* İçerik kartlarının stilleri */
-.left-card, .right-card {
-    display: flex;
-    align-items: center;
-    margin-top: 20px; /* Kartların üst kenardan 20px içeride olacak */
-}
-
-.left-card {
-    margin-right: auto; /* Sağdan boşluk bırakır */
-    background-color: bisque;
-    width: 500px;
-}
-
-
-
-
-.right-card {
-    margin-left: auto; /* Soldan boşluk bırakır */
-    background-color: bisque;
-    width: 500px;
-
-}
-
-
-
-#yer .content {
-    display: flex; /* İçeriği yatayda hizala */
-    justify-content: center; /* İçeriği yatayda tam ortala */
-    align-items: center; /* İçeriği dikeyde tam ortala */
-    flex-wrap: wrap; /* İçeriği sığdıramayacak kadar büyük olduğunda alt satıra geçmesini sağla */
-}
-
-#yer .content img {
-    margin: 10px; /* Fotoğraflar arasında boşluk bırak */
-    width: 300px; /* Fotoğraf genişliği */
-    height: 300px; /* Fotoğraf yüksekliği */
-    object-fit: cover; /* Fotoğraf boyutunu korurken orantılı olarak kırp */
-    border-radius: 10px; /* Fotoğraf kenarlarını yuvarla */
-}
-
-/* Dere Firtina kartı */
-#dere-firtina-card {
-    background-color: white; /* Kart arka planını beyaz yap */
-    padding: 10px; /* Kart içeriğine boşluk ekle */
-    border-radius: 10px; /* Kart kenarlarını yuvarla */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hafif bir gölge ekle */
-    position: absolute; /* Konumu mutlak yap */
-    display: none; /* Başlangıçta gizle */
-    z-index: 1; /* Diğer öğelerin üzerinde olacak şekilde ayarla */
-}
-
-/* Dere Firtina kartının metni */
-#dere-firtina-card p {
-    margin-bottom: 0; /* Paragrafın alt boşluğunu kaldır */
-}
-
-/* Dere Firtina fotoğrafına hover edildiğinde kartı göster */
-#dere-firtina:hover #dere-firtina-card {
-    display: block; /* Kartı göster */
-}
-
-
-/* Başlık ve içerik metinlerinin stilleri */
-.card-title {
+h3 {
+    margin-top: 0;
     text-align: center;
 }
 
-.card-text {
-    text-align: justify;
+#yeni-bolum {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 50px;
 }
 
-
-
-
-
-
-
-
-
-@media(max-width: 992px){
-    .navbar .links,
-    .navbar .actbtn{
-        display: none;
-    }
-
-    .navbar .togglebtn{
-        display: block;
-        color: white;
-    }
-
-    .drpmenu{
-        display: block;
-    }
-
+#yeni-bolum .image-container {
+    flex-basis: 40%; /* Sol resmin genişliği */
 }
 
-@media (max-width: 576px){
-    .drpmenu{
-        left: 2rem;
-        width: unset;
+#yeni-bolum .round-image {
+    width: 100%; /* Sol resmin genişliği */
+}
+
+#yeni-bolum article {
+    flex-basis: 50%; /* Açıklama alanının genişliği */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#slider {
+    display: flex;
+    justify-content: center;
+}
+
+/* Resimlerin maksimum genişliğini belirle */
+.carousel-inner img {
+    max-width: 600px;
+    max-height: 300px;
+}
+
+#sonsec1, #sonsec2, #sonsec3, #sonsec4 {
+    width: 100%;
+}
+
+/* section içindeki article'ların genişliğini arttırmak için */
+#sonsec1 article,
+#sonsec2 article,
+#sonsec3 article,
+#sonsec4 article {
+    flex-basis: 80%; /* Genişliği yüzde olarak ayarladık */
+    margin: 0 auto; /* Ortalamak için margin ekledik */
+}
+
+#sonsec1 h3, p {
+    color: #333;
+    text-decoration: none;
+}
+
+#sonsec2 h3, p {
+    color: #333;
+    text-decoration: none;
+}
+
+#sonsec3 h3, p {
+    color: #333;
+    text-decoration: none;
+}
+
+#sonsec4 h3, p {
+    color: #333;
+    text-decoration: none;
+}
+
+@media (max-width: 1200px) {
+    section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    * {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
+    article {
+        flex-basis: 80%;
+        margin: 10px 0;
+    }
+
+    #yeni-bolum {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #yeni-bolum .image-container,
+    #yeni-bolum article {
+        flex-basis: 100%;
+        margin: 10px 0;
+    }
+
+    #slider {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    #carouselExampleIndicators {
+        max-width: 100%;
+        width: 600px;
+    }
+}
+
+@media (max-width: 1080px) {
+    section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    * {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    article {
+        flex-basis: 90%;
+        margin: 10px 0;
+    }
+
+    #yeni-bolum {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #yeni-bolum .image-container,
+    #yeni-bolum article {
+        flex-basis: 100%;
+        margin: 10px 0;
+    }
+
+    #slider {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    #carouselExampleIndicators {
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+@media (max-width: 992px) {
+    section {
+        flex-direction: column;
+    }
+
+    * {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
+    article {
+        flex-basis: 100%;
+        margin: 10px 0;
+    }
+
+    #yeni-bolum {
+        flex-direction: column;
+    }
+
+    #yeni-bolum .image-container,
+    #yeni-bolum article {
+        flex-basis: 100%;
+        margin: 10px 0;
+    }
+
+    #slider {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    #carouselExampleIndicators {
+        max-width: 100%;
+        width: 600px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    * {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    header {
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    article {
+        padding: 10px;
+    }
+
+    .image-container {
+        flex-basis: 100%;
+    }
+
+    .round-image {
+        width: 80%;
+    }
+
+    #yeni-bolum {
+        margin-top: 20px;
+    }
+
+    #slider {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    #carouselExampleIndicators {
+        max-width: 100%;
+        width: 600px;
+    }
+}
+
+@media (max-width: 576px) {
+    .round-image {
+        width: 100%;
+    }
+
+    * {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .carousel-inner img {
+        max-height: 200px;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    #slider {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .carousel {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .carousel-inner img {
+        width: 100%;
+        height: auto;
     }
 }
