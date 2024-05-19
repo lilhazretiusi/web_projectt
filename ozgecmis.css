@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: darkblue;
+    color: #FFFF00;
+    text-align: center;
+    padding: 20px;
+}
+
+h2 {
+    color: darkblue;
+    border-bottom: 2px solid darkblue;
+    padding-bottom: 5px;
+    text-align: center; 
+    margin-top: 10px;
+}
+
+section {
+    margin: 20px auto; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px; 
+}
+
+article {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    flex-basis: calc(25% - 20px);
+    box-sizing: border-box;
+    transition: 0.3s ease;
+}
+article p{
+    margin: 15px;
+}
+
+article:hover {
+    transform: scale(1.05); 
+}
+
+h3 {
+    margin-top: 0;
+    text-align: center;
+}
+
+footer {
+    background-color: darkblue;
+    color: #FFFF00;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+.school-link {
+    display: block;
+    margin: 10px auto;
+    width: fit-content;
+    color: #FFFF00;
+}
+
+/* Ekstra stiller */
+@media (max-width: 768px) {
+    section {
+        justify-content: center; /* İçerikleri ortala */
+    }
+
+    article {
+        flex-basis: calc(50% - 20px); /* İki sütuna bölme */
+    }
+}
+
+@media (max-width: 576px) {
+    article {
+        flex-basis: calc(100% - 20px); /* Tek sütuna bölme */
+    }
+}

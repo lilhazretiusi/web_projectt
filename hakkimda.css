@@ -20,6 +20,7 @@
     color: skyblue;
 }
 
+
 .content img{
     border: #1D212B solid 3px;
     margin-left: 43px;
@@ -133,4 +134,89 @@ footer{
     width: 50px;
     height: 50px;
     border-radius: 50%;
+}
+
+
+/* Tablet için medya sorgusu */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column; /* İçeriği dikey hizalamak için */
+        margin-top: 20px;
+    }
+
+
+    main {
+        padding: 0 20px; /* Ana içeriğin sol ve sağında boşluk bırakmak için */
+    }
+    
+    .content img {
+        margin-right: 0; /* Resimlerin sağında boşluk bırakmamak için */
+        margin-bottom: 20px; /* Resimlerin altında boşluk bırakmak için */
+    }
+
+    .text {
+        margin-bottom: 20px; /* Yazıların altında boşluk bırakmak için */
+    }
+
+    section {
+        margin-top: 20px; /* Bölümler arasında boşluk bırakmak için */
+    }
+
+    main h1 {
+        margin-left: 0; /* Başlıkların solunda boşluk bırakmamak için */
+    }
+
+    .nav-item {
+        border-right: none; /* Navigasyon bağlantılarının sağında çizgi olmaması için */
+        padding-right: 0; /* Navigasyon bağlantıları ve çizgi arasındaki mesafeyi kaldırmak için */
+    }
+
+    .footer-icons {
+        flex-direction: row; /* İkonları yatay hizalamak için */
+    }
+
+    .footer-icons a {
+        margin: 0 5px; /* İkonlar arasındaki boşluğu azaltmak için */
+    }
+
+    
+    .navbar-nav {
+        flex-direction: column; /* Bağlantıları dikey hizalamak için */
+    }
+
+    .nav-item {
+        border-right: none; /* Çizgiyi kaldırmak için */
+        padding-right: 0; /* Sağdaki boşluğu kaldırmak için */
+        margin-bottom: 10px; /* Bağlantılar arasında boşluk bırakmak için */
+        text-align: center; /* Bağlantıları yatayda da ortala */
+    }
+
+    .navbar-brand {
+        text-align: center; /* Markayı yatayda da ortala */
+        margin-bottom: 10px; /* Marka ile bağlantılar arasında boşluk bırakmak için */
+    }
+}
+
+/* Telefon için medya sorgusu */
+@media (max-width: 576px) {
+    main h1 {
+        font-size: 1.5rem; /* Başlıkların boyutunu küçültmek için */
+        text-align: center; /* Başlıkları ortalamak için */
+    }
+    
+    .content img {
+        width: 100%; /* Resimlerin genişliğini ayarlamak için */
+        margin-left: 0; /* Resimlerin solunda boşluk bırakmamak için */
+        margin-bottom: 20px; /* Resimlerin altında boşluk bırakmak için */
+    }
+
+    .text {
+        text-align: justify; /* Metni yatayda düzgün hizalamak için */
+    }
+
+    footer {
+        height: auto; /* Footer yüksekliğini otomatik olarak ayarlamak için */
+        padding: 20px 0; /* Footer içeriği ile kenar boşlukları ayarlamak için */
+    }
+
 }

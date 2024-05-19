@@ -17,6 +17,7 @@
             <li>Telefon Numaranız: <?php echo htmlspecialchars($_POST['phone']); ?></li>
             <li>Mesajınız: <?php echo htmlspecialchars($_POST['message']); ?></li>
         </ul>
+        <a href="index.html" class="btn btn-primary mt-3">Anasayfaya Dön</a>
     </div>
 </body>
 </html>

@@ -1,30 +1,25 @@
-*
-{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.btn{
-    margin-top: 30px;
-}
-
-body{
+body {
     height: 100vh;
     width: 100%;
     display: flex;
-    align-items: center;
+    align-items: center; 
     justify-content: center;
     background: url(img/dark2.jpg);
     background-size: 100vw 100vh;
     background-position: center;
 }
 
-.wrapper{
+.wrapper {
     position: relative;
     width: 400px;
-    height: 440px;
+    max-height: 750px;
     background: transparent;
     border: 2px solid rgba(255, 255, 255, .5);
     border-radius: 20px;
@@ -34,6 +29,7 @@ body{
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    margin-bottom: 80px;
 }
 
 .wrapper .form-box {
@@ -50,12 +46,13 @@ body{
 .input-box {
     position: relative;
     width: 100%;
-    height: 50px;
+    height: 40px;
     border-bottom: 2px solid #FFF;
-    margin: 30px 0;
+    margin: 15px 0;
 }
 
-.input-box label {
+.input-box label,
+.textarea-box label {
     position: absolute;
     top: 50%;
     left: 5px;
@@ -68,89 +65,118 @@ body{
 }
 
 .input-box input:focus~label,
-.input-box input:valid~label {
+.input-box input:valid~label,
+.textarea-box textarea:focus~label,
+.textarea-box textarea:valid~label {
     top: -5px;
 }
 
-.input-box input {
+.input-box input,
+.textarea-box textarea {
     width: 100%;
-    height: 100%;
     border: none;
     background: transparent;
-    border: none;
     outline: none;
     font-size: 1em;
     color: #FFF;
     font-weight: 600;
     padding: 0 35px 0 5px;
-
 }
 
-.input-box .icon{
-    position: absolute;
-    right: 8px;
-    font-size: 1.2em;
-    color: #fff;
-    line-height: 57px;
+.textarea-box {
+    height: 100px;
+    border-bottom: 2px solid #FFF;
+    margin: 15px 0;
 }
 
-.remember-forgot {
+.textarea-box textarea {
+    resize: none;
+    height: 100%;
+}
+
+.genderrr {
     font-size: .9em;
     color: #FFF;
     font-weight: 500;
-    margin: -15px 0 15px;
     display: flex;
     justify-content: space-between;
 }
 
-.remember-forgot label input {
+.inputs {
+    display: flex;
+}
+
+.genderrr label {
+    margin-right: 20px;
+}
+
+.genderrr label input {
     accent-color: #fff;
-    margin-right: 3px;
+    margin-right: 5px;
 }
 
-.remember-forgot a {
+.genderrr span {
     color: #FFF;
-    text-decoration: none;
 }
 
-.remember-forgot a:hover {
-    text-decoration: underline;
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }
 
-.btn {
-    width: 100%;
-    height: 45px;
-    background: #FFF;
+.buttons .btn {
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
     border: none;
-    outline: none;
-    border-radius: 6px;
+    border-radius: 5px;
     cursor: pointer;
-    font-size: 1em;
-    color: #162938;
-    font-weight: 500;
+    transition: background-color 0.3s ease;
 }
 
-.login-register {
-    font-size: .9em;
-    color: #FFF;
-    text-align: center;
-    font-weight: 500;
-    margin: 25px 0 10px;
+.buttons .btn:hover {
+    background-color: #0056b3;
 }
 
-.login-register p a{
-    color: #FFF;
-    text-decoration: none;
-    font-weight: 600;
-}
 
-.login-register p a:hover {
-    text-decoration: underline;
-}
 
-@media screen and (max-height: 600px) {
-    body, .wrapper {
-        align-items: flex-start;
-        margin-top: 20px; 
+
+
+
+
+
+
+
+@media screen and (min-height: 600px) {
+    body {
+        justify-content: center;
+        align-items: center; 
+    }
+
+    .wrapper {
+        width: 80%; 
+        margin-top: auto; 
+    }
+
+    .form-box {
+        padding: 30px;
     }
 }
+
+@media screen and (max-height: 599px) {
+    body {
+        justify-content: flex-start;
+        align-items: flex-start; 
+    }
+
+    .wrapper {
+        width: 100%; 
+    }
+
+    .form-box {
+        padding: 20px; 
+    }
+}
+

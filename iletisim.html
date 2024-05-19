@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="iletisim.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Combined Form with Vue.js and JavaScript -->
+        <div class="form-box il">
+            <div class="connection">
+                <h2>İletişim</h2>
+                <form id="combinedForm" action="/pages/iletisim.php" method="POST">
+                    <div class="input-box">
+                        <input type="text" v-model="form.name" required>
+                        <label>İsim</label>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" v-model="form.surname" required>
+                        <label>Soyisim</label>
+                    </div>
+                    <div class="input-box">
+                        <input type="email" v-model="form.email" required>
+                        <label>E-mail</label>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" v-model="form.password" required>
+                        <label>Şifre</label>
+                    </div>
+                    <div class="input-box">
+                        <input type="tel" v-model="form.phone" required>
+                        <label>Telefon Numaranız</label>
+                    </div>
+                    <div class="input-box textarea-box">
+                        <textarea v-model="form.message" required></textarea>
+                        <label>Mesajınız</label>
+                    </div>
+                    <div class="buttons">
+                       <button type="button" @click="validateFormJavaScript">JS ile Gönder</button>
+                       <button type="button" @click="validateFormVue">Vue JS ile Gönder</button>
+                       <button type="reset">Temizle</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '.wrapper',
+            data: {
+                form: {
+                    name: '',
+                    surname: '',
+                    email: '',
+                    password: '',
+                    phone: '',
+                    message: ''
+                }
+            },
+            methods: {
+                validateFormJavaScript() {
+                    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+
+                    if (!emailPattern.test(this.form.email)) {
+                        alert('Geçerli bir e-posta adresi giriniz.');
+                        return;
+                    }
+
+                    if (!passwordPattern.test(this.form.password)) {
+                        alert('Şifre en az 8 karakter uzunluğunda olmalı, büyük harf, küçük harf ve sayı içermelidir.');
+                        return;
+                    }
+
+                    const form = document.createElement('form');
+                    form.method = 'POST';
+                    form.action = 'iletisim.php';
+
+                    for (const key in this.form) {
+                        if (this.form.hasOwnProperty(key)) {
+                            const hiddenField = document.createElement('input');
+                            hiddenField.type = 'hidden';
+                            hiddenField.name = key;
+                            hiddenField.value = this.form[key];
+                            form.appendChild(hiddenField);
+                        }
+                    }
+
+                    document.body.appendChild(form);
+                    form.submit();
+                },
+                validateFormVue() {
+                    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+
+                    if (!emailPattern.test(this.form.email)) {
+                        alert('Geçerli bir e-posta adresi giriniz.');
+                        return;
+                    }
+
+                    if (!passwordPattern.test(this.form.password)) {
+                        alert('Şifre en az 8 karakter uzunluğunda olmalı, büyük harf, küçük harf ve sayı içermelidir.');
+                        return;
+                    }
+
+                    const form = document.createElement('form');
+                    form.method = 'POST';
+                    form.action = 'iletisim.php';
+
+                    for (const key in this.form) {
+                        if (this.form.hasOwnProperty(key)) {
+                            const hiddenField = document.createElement('input');
+                            hiddenField.type = 'hidden';
+                            hiddenField.name = key;
+                            hiddenField.value = this.form[key];
+                            form.appendChild(hiddenField);
+                        }
+                    }
+
+                    document.body.appendChild(form);
+                    form.submit();
+                }
+            }
+        });
+    </script>
+</body>
+</html>

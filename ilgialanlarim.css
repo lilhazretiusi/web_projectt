@@ -74,8 +74,8 @@ section{
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 20px;
     margin: 0 auto;
-    width: 95%; /* Increased width to make the section wider */
-    max-width: 1600px; /* Increased max-width to allow more horizontal space */
+    width: 95%; 
+    max-width: 1600px; 
     box-sizing: border-box;
     transition: 0.3s ease;
 }

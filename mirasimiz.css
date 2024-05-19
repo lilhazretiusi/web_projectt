@@ -104,3 +104,203 @@ td img{
 }
 
 
+.technician {
+    transition: filter 0.3s ease;
+}
+
+.technician-name {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: cyan;
+    font-size: 16px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.technician:hover {
+    filter: blur(5px);
+}
+
+.technician:hover + .technician-name {
+    opacity: 1;
+}
+
+#teknikekip img {
+    margin-bottom: 40px; /* Teknik ekip fotoğrafları ile alt sınır arasında 10px boşluk bırak */
+}
+
+
+/* Telefon ve tablet çözünürlükleri için medya sorguları */
+@media (max-width: 768px) {
+    /* Navbar bağlantıları */
+    .navbar-nav .nav-link {
+        padding: 10px; /* Bağlantıların daha iyi görünmesi için padding ayarı */
+    }
+
+    /* Carousel içindeki metinlerin stil ayarları */
+    .carousel-caption {
+        font-size: 14px; /* Metin boyutunu küçült */
+        padding: 10px; /* İç içe boşluk ayarı */
+    }
+
+    /* Tablo içeriği */
+    table {
+        font-size: 12px; /* Tablo içeriğinin boyutunu küçült */
+    }
+
+/* Stadyum ve Taraftarlar bölümü için özel CSS */
+#stadyum .content {
+    position: relative; /* İçerik ve fotoğrafın konumunu belirlemek için */
+}
+
+#stadyum .content:hover img {
+    filter: blur(5px); /* Fotoğrafı blurla */
+}
+
+#stadyum .content .text {
+    position: absolute; /* Metni fotoğrafın içine konumlandırmak için */
+    top: 50%; /* Yükseklik açısından ortala */
+    left: 50%; /* Genişlik açısından ortala */
+    transform: translate(-50%, -50%); /* Tam ortalamak için */
+    z-index: 1; /* Metni fotoğrafın önüne getir */
+    opacity: 0; /* Başlangıçta görünmez */
+    max-width: 90%; /* Maksimum genişlik */
+    max-height: 90%; /* Maksimum yükseklik */
+    overflow: auto; /* Metin boyutu fotoğraf boyutunu aşarsa kaydırma çubuğu göster */
+    padding: 15px; /* İç içe boşluk */
+    background-color: rgba(0, 0, 0, 0.7); /* Arka plan rengi */
+    color: white; /* Metin rengi */
+    border-radius: 5px; /* Kenar yuvarlatma */
+    text-align: center; /* Metni ortala */
+    transition: opacity 0.3s ease; /* Geçiş efekti */
+}
+
+#stadyum .content:hover .text {
+    opacity: 1; /* Üzerine gelince metni görünür hale getir */
+}
+
+
+
+}
+
+/* Ekstra küçük cihazlar (telefonlar, 576px ve altı genişlik) */
+@media (max-width: 576px) {
+
+
+    /* Navbar logo boyutu */
+    .navbar-brand img {
+        width: 100px; /* Logo boyutunu küçült */
+    }
+
+    /* Carousel içindeki metinlerin stil ayarları */
+    .carousel-caption {
+        font-size: 12px; /* Metin boyutunu daha da küçült */
+        padding: 8px; /* İç içe boşluk ayarını azalt */
+    }
+
+    /* Tablo içeriği */
+    table {
+        font-size: 10px; /* Tablo içeriğinin boyutunu daha da küçült */
+    }
+/* Stadyum ve Taraftarlar bölümü için özel CSS */
+#stadyum .content {
+    position: relative; /* İçerik ve fotoğrafın konumunu belirlemek için */
+}
+
+#stadyum .content:hover img {
+    filter: blur(5px); /* Fotoğrafı blurla */
+}
+
+#stadyum .content .text {
+    position: absolute; /* Metni fotoğrafın içine konumlandırmak için */
+    top: 50%; /* Yükseklik açısından ortala */
+    left: 50%; /* Genişlik açısından ortala */
+    transform: translate(-50%, -50%); /* Tam ortalamak için */
+    z-index: 1; /* Metni fotoğrafın önüne getir */
+    opacity: 0; /* Başlangıçta görünmez */
+    max-width: 90%; /* Maksimum genişlik */
+    max-height: 90%; /* Maksimum yükseklik */
+    overflow: auto; /* Metin boyutu fotoğraf boyutunu aşarsa kaydırma çubuğu göster */
+    padding: 15px; /* İç içe boşluk */
+    background-color: rgba(0, 0, 0, 0.7); /* Arka plan rengi */
+    color: white; /* Metin rengi */
+    border-radius: 5px; /* Kenar yuvarlatma */
+    text-align: center; /* Metni ortala */
+    transition: opacity 0.3s ease; /* Geçiş efekti */
+}
+
+#stadyum .content:hover .text {
+    opacity: 1; /* Üzerine gelince metni görünür hale getir */
+}
+
+}
+
+
+@media (max-width: 992px){
+    /* Stadyum ve Taraftarlar bölümü için özel CSS */
+#stadyum .content {
+    position: relative; /* İçerik ve fotoğrafın konumunu belirlemek için */
+}
+
+#stadyum .content:hover img {
+    filter: blur(5px); /* Fotoğrafı blurla */
+}
+
+#stadyum .content .text {
+    position: absolute; /* Metni fotoğrafın içine konumlandırmak için */
+    top: 50%; /* Yükseklik açısından ortala */
+    left: 50%; /* Genişlik açısından ortala */
+    transform: translate(-50%, -50%); /* Tam ortalamak için */
+    z-index: 1; /* Metni fotoğrafın önüne getir */
+    opacity: 0; /* Başlangıçta görünmez */
+    max-width: 90%; /* Maksimum genişlik */
+    max-height: 90%; /* Maksimum yükseklik */
+    overflow: auto; /* Metin boyutu fotoğraf boyutunu aşarsa kaydırma çubuğu göster */
+    padding: 15px; /* İç içe boşluk */
+    background-color: rgba(0, 0, 0, 0.7); /* Arka plan rengi */
+    color: white; /* Metin rengi */
+    border-radius: 5px; /* Kenar yuvarlatma */
+    text-align: center; /* Metni ortala */
+    transition: opacity 0.3s ease; /* Geçiş efekti */
+}
+
+#stadyum .content:hover .text {
+    opacity: 1; /* Üzerine gelince metni görünür hale getir */
+}
+}
+
+@media (max-width: 1200px){
+    /* Stadyum ve Taraftarlar bölümü için özel CSS */
+#stadyum .content {
+    position: relative; /* İçerik ve fotoğrafın konumunu belirlemek için */
+}
+
+#stadyum .content:hover img {
+    filter: blur(5px); /* Fotoğrafı blurla */
+}
+
+#stadyum .content .text {
+    position: absolute; /* Metni fotoğrafın içine konumlandırmak için */
+    top: 50%; /* Yükseklik açısından ortala */
+    left: 50%; /* Genişlik açısından ortala */
+    transform: translate(-50%, -50%); /* Tam ortalamak için */
+    z-index: 1; /* Metni fotoğrafın önüne getir */
+    opacity: 0; /* Başlangıçta görünmez */
+    max-width: 90%; /* Maksimum genişlik */
+    max-height: 90%; /* Maksimum yükseklik */
+    overflow: auto; /* Metin boyutu fotoğraf boyutunu aşarsa kaydırma çubuğu göster */
+    padding: 15px; /* İç içe boşluk */
+    background-color: rgba(0, 0, 0, 0.7); /* Arka plan rengi */
+    color: white; /* Metin rengi */
+    border-radius: 5px; /* Kenar yuvarlatma */
+    text-align: center; /* Metni ortala */
+    transition: opacity 0.3s ease; /* Geçiş efekti */
+}
+
+#stadyum .content:hover .text {
+    opacity: 1; /* Üzerine gelince metni görünür hale getir */
+}
+}
